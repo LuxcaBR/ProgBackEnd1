@@ -1,0 +1,13 @@
+### Test Conexão
+
+GET http://localhost:3000
+
+### Test POST 
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+    "name": "Fema",
+    "curso": "TI"
+
+}
