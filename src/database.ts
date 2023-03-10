@@ -12,7 +12,7 @@ export class Database {
 
     insert(tabela:string, data:object):object {
         if(Array.isArray(this.Database[tabela])){
-        // se sim, entra aqui
+        // se sim, entra aqui.
         this.Database[tabela].push(data)
         }
         else
