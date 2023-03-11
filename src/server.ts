@@ -16,8 +16,8 @@ import { Database } from './database';
         const user = database.select("user");
         response.json(user)
 
-        //Parametro que está vindo do cliente - request
-        //Parametro que está indo para o cliente - response
+        //Parâmetro que está vindo do cliente - request
+        //Parâmetro que está indo para o cliente - response
     });    
 
      app.post('/', (request, response) => {

@@ -7,7 +7,7 @@ POST http://localhost:3000
 Content-Type: application/json
 
 {
-    "name": "Fema",
-    "curso": "TI"
+    "name": "Lucas",
+    "curso": "T0I"
 
 }
