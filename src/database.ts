@@ -1,5 +1,4 @@
 import fs from "node:fs/promises"
-import { json } from "stream/consumers";
 
 const databasePath = new URL('../db.json', import.meta.url)
 export class Database {
@@ -11,7 +10,7 @@ export class Database {
         fs.readFile(databasePath, 'utf8')
         .then(data =>{this.#database = JSON.parse(data)
         }).catch((() => {
-            this.#persist
+            this.#persist()
         }));
     }
 
@@ -41,4 +40,13 @@ export class Database {
 
         return data
     }
+
+    delete(table:string,id:string){
+        const rowIndex = this.#database[table].findIndex((row) => row.id == id)
+
+        if (rowIndex > -1 ){
+            this.#database[table].splice(rowIndex, 1)
+        }
+    }
+
 }
