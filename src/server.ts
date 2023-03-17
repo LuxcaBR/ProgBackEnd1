@@ -13,6 +13,8 @@ import { randomUUID }  from 'node:crypto';
 
     var dados:string[] = []
 
+    const table =  "user"
+
     app.get ('/', (request, response ) => {
         const user = database.select("user");
         response.json(user)
@@ -33,9 +35,15 @@ import { randomUUID }  from 'node:crypto';
 
         database.insert('user', user);
 
-        response.status(201).send();
+        response.status(201).json({msg: "sucesso!"});
 
      });
+
+     app.delete("/:id", (request, response)=> {
+        const {id} = request.params
+     database.select(table, id)
+    
+    })
 
     app.listen(port, () => {
         console.log (`Server Running! <3, end: http://localhost:${port}`);
